@@ -62,6 +62,7 @@ func main() {
 		Name: "Nithish",
 		Age:  20,
 	}
+	
 
 	book := Book{
 		Title:  "War and Peace",
@@ -83,3 +84,4 @@ func main() {
 	fmt.Println("\n===== Remove Duplicates =====")
 	fmt.Println(removeDuplicates(nums))
 }
+

@@ -1,68 +1,78 @@
 package main
 
-import ("fmt")
-func main(){
-	fmt.Println("Go prep")
+import "fmt"
 
-	// var x int = 5 // explicit
-	y := 10 // inferred — "short declaration"
-	// var a float64 = 2.3
-	// s := "hello world"
-	// u := true
+func main() {
+	fmt.Println("🚀 Go Basics Practice")
+
+	// Variables
+	y := 10
 	z := 23
 	n := 10
 
-	fmt.Println(sumToN(n))
-	fmt.Println(add(y,z))
-	fmt.Println(max(y,z))
-	fmt.Println(isEven(y))
+	// Function Examples
+	fmt.Printf("Sum of numbers from 1 to %d: %d\n", n, sumToN(n))
+	fmt.Printf("Addition of %d and %d: %d\n", y, z, add(y, z))
+	fmt.Printf("Maximum of %d and %d: %d\n", y, z, max(y, z))
+	fmt.Printf("Is %d even? %t\n\n", y, isEven(y))
 
-	for i:= 1 ; i<= 20; i++{
-		if i%3 == 0 && i%5 == 0{
+	// FizzBuzz
+	fmt.Println("FizzBuzz (1 - 20)")
+	for i := 1; i <= 20; i++ {
+		switch {
+		case i%15 == 0:
 			fmt.Println("FizzBuzz")
-		}else if i%3 == 0{
+		case i%3 == 0:
 			fmt.Println("Fizz")
-		}else if i%5 == 0{
+		case i%5 == 0:
 			fmt.Println("Buzz")
-		}else {
+		default:
 			fmt.Println(i)
 		}
 	}
 
-	// fmt.Println(x+y)
-	// fmt.Println(s)
-	// fmt.Println(u)
+	// slices
+	nums := []int{1, 2, 3}
+	nums = append(4) // append a new value, doesn't mutate in place return a different underlying array
+
+	// Maps
+	ages := map[string]int{"me":20}
+	ages[frnd] = 21 
+	val, ok := ages["me"] // ok returns false if key doesn't exist
+	
+	// Structs
+	// no class keyword in Go
+	
+
+
+
+
 }
 
-func sumToN(n int) int{
+// sumToN returns the sum of numbers from 1 to n.
+func sumToN(n int) int {
 	sum := 0
-	for i := 0 ; i <= n ; i++{
+	for i := 1; i <= n; i++ {
 		sum += i
 	}
 	return sum
 }
 
-func isEven(a int) bool{
-	if a % 2 == 0{
-		return true
-	}
-	return false
-}
-
-func max(a int, b int) int{
-	if a > b {
-		return a
-	}
-		return b	
-}
-
-
-
-
-
-
-func add(a int, b int) int{
+// add returns the sum of two integers.
+func add(a, b int) int {
 	return a + b
 }
 
+// max returns the larger of two integers.
+func max(a, b int) int {
+	if a > b {
+		return a
+	}
+	return b
+}
+
+// isEven returns true if the number is even.
+func isEven(n int) bool {
+	return n%2 == 0
+}
 
