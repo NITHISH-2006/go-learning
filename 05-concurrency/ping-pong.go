@@ -6,7 +6,6 @@ import (
 )
 
 func player(name string, court chan string) {
-	// for {
 	ball := <-court
 
 	fmt.Printf("%s hit the ball!\n", name)
@@ -15,7 +14,6 @@ func player(name string, court chan string) {
 
 	court <- ball
 	player(name, court)
-	// }
 }
 
 func main() {
